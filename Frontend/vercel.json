@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/BabyBoom/(.*)", "destination": "/BabyBoom/index.html" }
+  ]
+}
