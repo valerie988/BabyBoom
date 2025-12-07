@@ -142,7 +142,7 @@ const SignUp = () => {
 
             {/* Sign Up button */}
             <button
-              type="submit"
+              type="submit" onClick={() => navigate("/home")}
               className="w-full bg-rose-400 text-white py-3 rounded-xl font-semibold hover:bg-rose-500 transition text-lg"
             >
               {t("Sign Up")}
