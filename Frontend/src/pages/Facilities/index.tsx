@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { MapPin, ChevronDown } from "lucide-react";
 import Layout from "../../components/Layout";
+import images from "../../types/images";
 
 type HealthCenter = {
   id: string;
@@ -34,11 +35,11 @@ const CentersPage: React.FC = () => {
   });
 
   const centers: HealthCenter[] = [
-    { id: "1", name: "Buea General Hospital", address: "Buea Town", distance: 2.1, acceptsCheck: true, hours: "7am - 5pm", tags: ["Prenatal", "Delivery"], lat: 4.157, lng: 9.243, image: "/hospital1.png" },
-    { id: "2", name: "St. Theresa Clinic", address: "Buea Downtown", distance: 3.2, acceptsCheck: false, hours: "8am - 6pm", tags: ["Maternity", "Pediatrics"], lat: 4.159, lng: 9.247, image: "/hospital2.png" },
-    { id: "3", name: "Buea Health Center", address: "Buea Heights", distance: 4.0, acceptsCheck: true, hours: "24h/24", tags: ["Prenatal", "Vaccination"], lat: 4.161, lng: 9.250, image: "/hospital3.png" },
-    { id: "4", name: "Holy Family Clinic", address: "Buea Main Road", distance: 1.8, acceptsCheck: false, hours: "7am - 7pm", tags: ["Delivery", "Pediatrics"], lat: 4.155, lng: 9.245, image: "/hospital4.png" },
-    { id: "5", name: "Regional Hospital Buea", address: "Molyko", distance: 3.5, acceptsCheck: true, hours: "24h/24", tags: ["Prenatal", "Maternity"], lat: 4.160, lng: 9.248, image: "/hospital5.png" },
+    { id: "1", name: "Buea General Hospital", address: "Buea Town", distance: 2.1, acceptsCheck: true, hours: "7am - 5pm", tags: ["Prenatal", "Delivery"], lat: 4.157, lng: 9.243, image: images.bueaTown },
+    { id: "2", name: "St. Theresa Clinic", address: "Buea Downtown", distance: 3.2, acceptsCheck: false, hours: "8am - 6pm", tags: ["Maternity", "Pediatrics"], lat: 4.159, lng: 9.247, image: images.cma },
+    { id: "3", name: "Buea Health Center", address: "Buea Heights", distance: 4.0, acceptsCheck: true, hours: "24h/24", tags: ["Prenatal", "Vaccination"], lat: 4.161, lng: 9.250, image: images.fako },
+    { id: "4", name: "Holy Family Clinic", address: "Buea Main Road", distance: 1.8, acceptsCheck: false, hours: "7am - 7pm", tags: ["Delivery", "Pediatrics"], lat: 4.155, lng: 9.245, image: images.general },
+    { id: "5", name: "Regional Hospital Buea", address: "Molyko", distance: 3.5, acceptsCheck: true, hours: "24h/24", tags: ["Prenatal", "Maternity"], lat: 4.160, lng: 9.248, image: images.montMary },
   ];
 
   // Get user's real location

@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const slides = [
   {
-    image: images.breastfeeding,
+    image: images.baby,
     title: "Welcome to BabyBoom",
     subtitle: "Your companion for pregnancy and parenting",
     description:
@@ -38,7 +38,7 @@ const Index: React.FC = () => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000, // 3 seconds per slide
+    autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -51,6 +51,7 @@ const Index: React.FC = () => {
         <ul className="flex gap-3">{dots}</ul>
       </div>
     ),
+
     customPaging: () => (
       <div className="w-3 h-3 rounded-full bg-pink-300"></div>
     ),
@@ -58,7 +59,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col bg-white relative overflow-hidden">
-
+      
       {/* Language Switcher */}
       <div className="absolute top-6 right-6 z-20">
         <LanguageSwitcher />
@@ -70,30 +71,32 @@ const Index: React.FC = () => {
           {slides.map((slide, index) => (
             <div key={index} className="relative w-full h-[70vh] md:h-[80vh]">
 
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              ></div>
+              {/* Image - FIXED ZOOM + VISIBLE ON DESKTOP */}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
-              {/* Blur Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-white/20 via-white/0 to-transparent backdrop-blur-xs"></div>
+              {/* Strong Overlay for Visibility */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent backdrop-blur-sm"></div>
 
-              {/* Text Content */}
+              {/* Text */}
               <div className="absolute bottom-14 w-full flex flex-col items-center px-6 text-center z-30">
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-pink-100 shadow-md">
-                  <Heart className="text-pink-400 w-6 h-6" strokeWidth={1.5} />
+                
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md shadow-md">
+                  <Heart className="text-pink-300 w-6 h-6" strokeWidth={1.5} />
                 </div>
 
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-5 text-gray-900">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mt-5 text-white drop-shadow-lg">
                   {slide.title}
                 </h1>
 
-                <p className="text-pink-500 font-medium text-base md:text-lg mt-2">
+                <p className="text-pink-300 font-semibold text-base md:text-lg mt-2 drop-shadow">
                   {slide.subtitle}
                 </p>
 
-                <p className="text-gray-700 text-sm md:text-base mt-3 max-w-[90%] md:max-w-md">
+                <p className="text-white/90 text-sm md:text-base mt-3 max-w-[90%] md:max-w-md drop-shadow">
                   {slide.description}
                 </p>
               </div>
@@ -112,7 +115,7 @@ const Index: React.FC = () => {
         </button>
 
         <button
-          className="text-gray-500 text-sm hover:underline"
+          className="text-gray-700 text-sm hover:underline"
           onClick={() => navigate("/signup")}
         >
           Sign Up

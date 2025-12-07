@@ -5,6 +5,7 @@ import LanguageSwitcher from "../components/LanguageSwitcher";
 import { Eye, EyeOff } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import images from "../types/images";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ const Login = () => {
         {/* Left image */}
         <div className="hidden md:flex flex-1 bg-rose-50 items-center justify-center p-6">
           <img
-            src="/images/baby-boom.png"
+            src={images.login}
             alt="babyboom"
             className="object-contain max-h-[400px]"
           />

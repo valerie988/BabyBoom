@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { navLinks } from "../types/navLinks";
+import images from "../types/images";
 
 const Sidebar = () => {
   return (
     <aside className="hidden md:flex flex-col w-64 bg-white border-r p-6 h-screen fixed top-0 left-0 shadow-lg overflow-y-auto">
       {/* APP NAME */}
-      <h1 className="text-3xl font-extrabold text-green-600 mb-12 tracking-wide">
-        BabyBoom
+      <h1 className="text-xl font-extrabold text-green-600 mb-5 italic tracking-wide flex items-center">
+        <img src={images.logo} alt="" className="w-20"/> 
+        <h1>Baby<span className="text-rose-400">Boom</span></h1>
       </h1>
 
       {/* NAV ITEMS */}
