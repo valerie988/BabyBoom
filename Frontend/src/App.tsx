@@ -12,7 +12,7 @@ import MyVoucher from "./pages/MyVoucher";
 import SignUp from "./auth/signup";
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/BabyBoom">
     <Routes>
       <Route path="/" element={<Navigate to="/onboarding" replace />} />
       <Route path="/onboarding" element={<Onboarding />} />
